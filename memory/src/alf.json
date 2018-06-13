@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "name": "brucespringsteen",
+        "image": "https://i.ytimg.com/vi/AY2JPhmp6iw/hqdefault.jpg",
+        "picked": false
+    },{
+        "id": 2,
+        "name": "eltonjohn",
+        "image": "https://coubsecure-s.akamaihd.net/get/b174/p/coub/simple/cw_timeline_pic/edf3eb1f6e1/18e9e06b7bbcde783ca1a/med_1499424416_image.jpg",
+        "picked": false
+    },{
+        "id": 3,
+        "name": "zztop",
+        "image": "http://noiselesschatter.com/2013/12/05/alf-reviews-dont-it-make-your-brown-eyes-blue-season-1-episode-8/",
+        "picked": false
+    },{
+        "id": 4,
+        "name": "bluedress",
+        "image": "http://noiselesschatter.com/wp-content/uploads/2013/10/alfep2m.png",
+        "picked": false
+    },{
+        "id": 5,
+        "name": "vacation",
+        "image": "http://noiselesschatter.com/wp-content/uploads/2014/03/alfep25d.png",
+        "picked": false
+    },{
+        "id": 6,
+        "name": "willienelson",
+        "image": "https://metvcdn.metv.com/qO9HB-1517518316-11253-list_items-1_alf_outfits_s3e10.png",
+        "picked": false
+    },{
+        "id": 7,
+        "name": "naked",
+        "image": "http://www.ioffer.com/img3/item/635/825/690/alf-tv-show-complete-series-dvd-aecd.jpg",
+        "picked": false
+    },{
+        "id": 8,
+        "name": "grouchomarx",
+        "image": "https://metvcdn.metv.com/09dND-1517518767-11259-list_items-7_alf_outfits_s2e6.png",
+        "picked": false
+    },{
+        "id": 9,
+        "name": "johnnycarson",
+        "image": "https://metvcdn.metv.com/EG7dW-1517518919-11262-list_items-9_alf_outfits_s3e4_part_3.png",
+        "picked": false
+    },{
+        "id": 10,
+        "name": "graduate",
+        "image": "https://metvcdn.metv.com/keTo4-1517519575-11272-list_items-18_alf_outfits_s1e9.png",
+        "picked": false
+    },{
+        "id": 11,
+        "name": "asparagus",
+        "image": "https://metvcdn.metv.com/RUjwz-1517518462-11255-list_items-3_alf_outfits_s1e22.png",
+        "picked": false
+    },{
+        "id": 12,
+        "name": "woman",
+        "image": "https://metvcdn.metv.com/UR85j-1517519651-11273-list_items-19_alf_outfits_s2e19_useme.png",
+        "picked": false
+    }
+]
