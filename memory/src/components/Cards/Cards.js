@@ -3,7 +3,9 @@ import "./Cards.css";
 
 const Cards = props => (
     <div className="card">
-        <img alt={props.name} src={props.image} />
+        <div className = "img-container">
+            <img id = {props.id} alt={props.name} src={props.image} />
+        </div>
     </div>
 );
 
