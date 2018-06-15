@@ -4,6 +4,7 @@ import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import Score from "./components/Score";
 import shumway from "./alf.json";
+import shuffleArray from "./util/shuffleArray";
 import "./App.css";
 
 class App extends React.Component {
@@ -14,21 +15,32 @@ class App extends React.Component {
         clicked: false
     }
 
-pickedAlf = id => {
-    console.log(`clicked on ${this.state.alf[0].id}`);
-    // const gordon = this.clicked.filter(alf => alf.id === id);
-    // if(!this.clicked){
-    //     this.clicked.setState(true);
-    //     this.setState({score: this.state.score+1});
-    // } else {
-    //     this.setState({score: 0,
-    //                     alf: shumway});
-    // }
-}
+    componentWillMount = () => {
+        shuffleArray(this.state.alf);
+    }
 
-highScore = () => {
-    if(this.state.score > this.state.bestScore) {
-        this.bestScore.setState({bestScore: this.state.score});
+    componentWillUpdate = () => {
+        shuffleArray(this.state.alf);
+    }
+
+    highScore = (score) => {
+        if(this.state.bestScore === score) {
+            this.setState({bestScore: this.state.bestScore+1});
+        }
+    }
+
+pickedAlf = (id, clicked) => {
+    console.log(`clicked on ${id} and ${clicked}`);
+    // const gordon = this.state.alf.filter(alf => alf.id === id);
+    // console.log(gordon);
+    if(!clicked){
+        this.setState({clicked: true});
+        this.setState({score: this.state.score+1});
+        this.highScore(this.state.score);
+    } else {
+        this.setState({score: 0,
+                        alf: shumway,
+                        clicked: false});
     }
 }
 
@@ -46,7 +58,8 @@ highScore = () => {
                         id={alf.id}
                         image={alf.image}
                         name={alf.name}
-                        action={this.pickedAlf}
+                        pickedAlf={this.pickedAlf}
+                        clicked={this.state.clicked}
                     />
                 ))}
             </Wrapper>
