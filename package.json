@@ -2,7 +2,6 @@
   "name": "memory",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cfdahill.github.io/react-memoryGame/",
   "dependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
