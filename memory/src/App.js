@@ -29,12 +29,15 @@ class App extends React.Component {
         }
     }
 
-pickedAlf = (id, clicked) => {
+    handleClick = (id, clicked) => {
     console.log(`clicked on ${id} and ${clicked}`);
+    const gordon = this.state.alf.filter(alf => alf.id === id);
+    console.log(gordon);
     // const gordon = this.state.alf.filter(alf => alf.id === id);
     // console.log(gordon);
     if(!clicked){
-        this.setState({clicked: true});
+        this.setState({
+            clicked: true});
         this.setState({score: this.state.score+1});
         this.highScore(this.state.score);
     } else {
@@ -58,7 +61,7 @@ pickedAlf = (id, clicked) => {
                         id={alf.id}
                         image={alf.image}
                         name={alf.name}
-                        pickedAlf={this.pickedAlf}
+                        handleClick={this.handleClick}
                         clicked={this.state.clicked}
                     />
                 ))}
