@@ -12,7 +12,8 @@ class App extends React.Component {
         alf: shumway,
         score: 0,
         bestScore: 0,
-        clicked: false
+        picked: [],
+        comment: ""
     }
 
     componentWillMount = () => {
@@ -29,21 +30,27 @@ class App extends React.Component {
         }
     }
 
-    handleClick = (id, clicked) => {
-    console.log(`clicked on ${id} and ${clicked}`);
+    handleClick = (id) => {
+    console.log(`clicked on ${id}`);
     const gordon = this.state.alf.filter(alf => alf.id === id);
     console.log(gordon);
-    // const gordon = this.state.alf.filter(alf => alf.id === id);
-    // console.log(gordon);
-    if(!clicked){
-        this.setState({
-            clicked: true});
-        this.setState({score: this.state.score+1});
-        this.highScore(this.state.score);
-    } else {
-        this.setState({score: 0,
-                        alf: shumway,
-                        clicked: false});
+
+        if(!this.state.picked.includes(id)){
+            this.state.picked.push(id)
+            this.setState({score: this.state.score+1,
+                           comment: "Brilliant! This and the letter 'I' in one day."});
+            console.log(this.picked);
+            if(this.state.score > 11) {
+                this.setState({comment: "Grease fire!  Grease fire!  Never mind the curtains, put me out.",
+                                score: 0,
+                                picked: []});
+            }
+            this.highScore(this.state.score);
+        } else {
+            this.setState({score: 0,
+                        comment: "Ha!  I kill me!",
+                        picked: []});
+            console.log(this.picked);
     }
 }
 
@@ -51,6 +58,7 @@ class App extends React.Component {
         return (
             <Wrapper>
                 <Title>Gordon Shumway - the memory game </Title>
+                <div className="commentary"><h2>{this.state.comment}</h2></div>
                 <Score 
                     score={this.state.score}
                     best={this.state.bestScore}    
